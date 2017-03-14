@@ -44,7 +44,7 @@ class TestTeam < MiniTest::Test
   players = ["Murray Davidson",
     "Zander Clarke"]
 
-  @team = Team.new("St.Johnstone", players, "Tommy Wright")
+  @team = Team.new("St.Johnstone", players, "Tommy Wright", 0)
   end
 
   def test_get_team_name
@@ -73,6 +73,17 @@ class TestTeam < MiniTest::Test
     @team.check_player("Murray Davidson")
     assert_equal(true, @team.check_player("Murray Davidson"))
   end
+
+  def test_win
+    @team.win_or_lose("win")
+    assert_equal(1, @team.points)
+  end
+
+  def test_lose
+    @team.win_or_lose("lose")
+    assert_equal(0, @team.points)
+  end
+
 
 
 end
