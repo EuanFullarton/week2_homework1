@@ -57,4 +57,8 @@ class Team
   #   @coach = new_coach
   # end
 
+  def check_player(player_name)
+    return if player_name == @players 
+  end
+    
 end

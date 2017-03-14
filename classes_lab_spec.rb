@@ -71,5 +71,10 @@ class TestTeam < MiniTest::Test
     assert_equal(3, @team.players.length())
   end
 
+  def test_check_player
+    @team.check_player("Murray Davidson")
+    assert_equal(true, @team.check_player("Murray Davidson"))
+  end
+
 
 end
