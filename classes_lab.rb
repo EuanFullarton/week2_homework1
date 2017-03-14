@@ -67,7 +67,7 @@ class Team
   end
 
   def win_or_lose(win_or_lose)
-    if win_or_lose == ("win")
+    if win_or_lose.downcase() == ("win")
       @points += 1
     end
   end
