@@ -57,8 +57,12 @@ class Team
   #   @coach = new_coach
   # end
 
+  def add_player(new_player)
+    @players << new_player
+  end
+
   def check_player(player_name)
-    return if player_name == @players 
+    return @players.include?(player_name)
   end
     
 end

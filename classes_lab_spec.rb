@@ -41,10 +41,8 @@ class TestTeam < MiniTest::Test
   
   def setup
   
-  players = {
-    "Murray Davidson" => "CM",
-    "Zander Clarke" => "GK"
-  }
+  players = ["Murray Davidson",
+    "Zander Clarke"]
 
   @team = Team.new("St.Johnstone", players, "Tommy Wright")
   end
@@ -67,7 +65,7 @@ class TestTeam < MiniTest::Test
   end
 
   def test_add_player
-    @team.players["Steven Anderson"] = "CB"
+    @team.add_player("Steven Anderson")
     assert_equal(3, @team.players.length())
   end
 
